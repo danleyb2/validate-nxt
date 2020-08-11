@@ -1,0 +1,12 @@
+@import '~vuetify/src/styles/styles.sass';
+
+
+$material-dark: map-merge($material-dark, (
+    'buttons': (
+            'disabled': green,
+            'focused': yellow,
+            'focused-alt': purple,
+            'pressed': brown
+
+    )
+));

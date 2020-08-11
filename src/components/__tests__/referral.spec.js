@@ -59,17 +59,25 @@ describe('Referral Signup Page', () => {
     })
 
     it('Validation Errors for Required Fields Displayed On Click', async () => {
+      expect(wrapper.vm.$validator.errors.items).toHaveLength(0)
       wrapper.find('[data-cy=card-action]').trigger('click')
       // await wrapper.vm.$validator.validate()
       await flushPromises()
-      //await timeout(4000)
-      //  expect(wrapper.vm.$validator.errors.items).toHaveLength(0)
+      expect(wrapper.vm.$validator.errors.items).toHaveLength(4)
+      // Try 1
+      // await wrapper.vm.$nextTick()
+
+      // Try 2
+      // function timeout(ms) {
+      //   return new Promise(resolve => setTimeout(resolve, ms));
+      // }
+      // await timeout(4000)
+      
+      // Try 3
       // await wrapper.vm.$forceUpdate();
 
       // fields highlighted
-      // expect(wrapper.findAll('input')).toHaveLength(40)
-      // console.log(wrapper.findAll('input'))
-      // console.log(wrapper.vm.$validator.errors.items)
+
       expect(wrapper.findAll('.v-input.error--text')).toHaveLength(4)
       // await wrapper.vm.$nextTick()
       // await wrapper.vm.$nextTick()

@@ -68,6 +68,15 @@ export default {
       }
     },
     field() {
+      // console.log(this.errors.items);
+      //  console.log(this.fields);
+      // for (let i = 0; i < this.fields.length; i++) {
+      //   const f = this.fields[i];
+      //   console.log(`${f.name} ${f.valid} ${f.validate} `);
+        
+      // }
+      
+
       if (this.scope) {
         return (this.fields[`$` + this.scope] || {})[this.name]
       } else {
